@@ -2,38 +2,32 @@
 //  Regular.cpp
 //  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 12/6/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright © 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
 #include "Regular.h"
 
-// ---------------------------------------------------------------- default constructor
-
+//default constructor
 Regular::Regular(void)
-: Sampler()
+    : Sampler()
 {}
 
 
-// ---------------------------------------------------------------- constructor
-
+//constructor
 Regular::Regular(const int num)
-: 	Sampler(num)
-{
+    : Sampler(num) {
     generate_samples();
 }
 
 
-// ---------------------------------------------------------------- copy constructor
-
+//copy constructor
 Regular::Regular(const Regular& u)
-: Sampler(u)
-{
+    : Sampler(u) {
     generate_samples();
 }
 
-// ---------------------------------------------------------------- assignment operator
-
+//operator
 Regular&
 Regular::operator= (const Regular& rhs)	{
     if (this == &rhs)
@@ -44,20 +38,17 @@ Regular::operator= (const Regular& rhs)	{
     return (*this);
 }
 
-// ---------------------------------------------------------------- clone
-
+//clone
 Regular*
 Regular::clone(void) const {
     return (new Regular(*this));
 }
 
-// ---------------------------------------------------------------- destructor
-
+//destructor
 Regular::~Regular(void) {}
 
 
-// ---------------------------------------------------------------- generate_samples
-
+//generate samples function
 void
 Regular::generate_samples(void) {
     int n = (int) sqrt((float)num_samples);

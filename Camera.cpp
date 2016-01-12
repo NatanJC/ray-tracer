@@ -2,23 +2,13 @@
 //  Camera.cpp
 //  ray tracing
 //
-//  Created by Natan Chawalitcheewin
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
-//
-
-// 	Copyright (C) Kevin Suffern 2000-2007.
-//	This C++ code is for non-commercial purposes only.
-//	This C++ code is licensed under the GNU General Public License Version 2.
-//	See the file COPYING.txt for the full license.
-
-
-// This file contains the definition of the Camera class
 
 #include "Camera.h"
 
 
-// ----------------------------------------------------------------- default constructor
-
+//default constructor
 Camera::Camera(void)		
 	:	eye(0, 0, 500),
 		lookat(0),
@@ -31,8 +21,7 @@ Camera::Camera(void)
 {}
 
 
-// ----------------------------------------------------------------- copy constructor
-
+//constructor
 Camera::Camera(const Camera& c)   		
 	: 	eye(c.eye),
 		lookat(c.lookat),
@@ -45,37 +34,30 @@ Camera::Camera(const Camera& c)
 {}
 
 
-
-// ----------------------------------------------------------------- assignment operator
-
+//operator
 Camera& 
 Camera::operator= (const Camera& rhs) {
 	if (this == &rhs)
 		return (*this);
 	
-	eye				= rhs.eye;
-	lookat			= rhs.lookat;
-	ra				= rhs.ra;
-	up				= rhs.up;
-	u				= rhs.u;
-	v				= rhs.v;
-	w				= rhs.w;
-	exposure_time 	= rhs.exposure_time;
+	eye	= rhs.eye;
+	lookat = rhs.lookat;
+	ra = rhs.ra;
+	up = rhs.up;
+	u = rhs.u;
+	v = rhs.v;
+	w = rhs.w;
+	exposure_time = rhs.exposure_time;
 
 	return (*this);
 }
 
 
-// ----------------------------------------------------------------- destructor
-
+//destructor
 Camera::~Camera(void) {}
 
 
-
-//-------------------------------------------------------------- compute_uvw
-
-// This computes an orthornormal basis given the view point, lookat point, and up vector
-
+//compute uvw
 void
 Camera::compute_uvw(void) {
 	w = eye - lookat;
@@ -83,16 +65,16 @@ Camera::compute_uvw(void) {
 	u = up ^ w; 
 	u.normalize();
 	v = w ^ u;
-
-	// take care of the singularity by hardwiring in specific camera orientations
-	
-	if (eye.x == lookat.x && eye.z == lookat.z && eye.y > lookat.y) { // camera looking vertically down
+    
+    //vertically down
+	if (eye.x == lookat.x && eye.z == lookat.z && eye.y > lookat.y) {
 		u = Vector3D(0, 0, 1);
 		v = Vector3D(1, 0, 0);
 		w = Vector3D(0, 1, 0);	
 	}
 	
-	if (eye.x == lookat.x && eye.z == lookat.z && eye.y < lookat.y) { // camera looking vertically up
+    //vertically up
+	if (eye.x == lookat.x && eye.z == lookat.z && eye.y < lookat.y) {
 		u = Vector3D(1, 0, 0);
 		v = Vector3D(0, 0, 1);
 		w = Vector3D(0, -1, 0);

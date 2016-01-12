@@ -1,8 +1,8 @@
 //
 //  GeometricObject.h
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 10/6/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -15,20 +15,20 @@
 
 class GeometricObject {
     public:
-        GeometricObject(void);									// default constructor
+        GeometricObject(void);
     
-        GeometricObject(const GeometricObject& object);			// copy constructor
+        GeometricObject(const GeometricObject& object);
     
-        virtual GeometricObject*								// virtual copy constructor
+        virtual GeometricObject*
         clone(void) const = 0;
     
-        virtual 												// destructor
+        virtual
         ~GeometricObject (void);
     
         virtual bool
         hit(const Ray& ray, double& t, ShadeRec& s) const = 0;
     
-        //set color function only required when there is no material assigned
+        //color
         void
         set_color(const RGBColor& c);
 				
@@ -39,21 +39,19 @@ class GeometricObject {
         get_color(void);
     
     protected:
-        RGBColor color; //only used in this chapter
+        RGBColor color;
     
-        GeometricObject&						// assignment operator
-        operator= (const GeometricObject& rhs);
+        GeometricObject&
+        operator = (const GeometricObject& rhs);
 };
 
-// --------------------------------------------------------------------  set_color
-
+//set color
 inline void
 GeometricObject::set_color(const RGBColor& c) {
     color = c;
 }
 
-// --------------------------------------------------------------------  set_color
-
+//set color
 inline void
 GeometricObject::set_color(const float r, const float g, const float b) {
     color.r = r;
@@ -61,8 +59,7 @@ GeometricObject::set_color(const float r, const float g, const float b) {
     color.g = g;
 }
 
-// --------------------------------------------------------------------  get_color
-
+//get color
 inline RGBColor
 GeometricObject::get_color(void) {
     return (color);

@@ -1,8 +1,8 @@
 //
 //  SingleSphere.h
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 11/5/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -14,7 +14,6 @@
 
 class SingleSphere: public Tracer {
 public:
-    
     SingleSphere(void);
     
     SingleSphere(World* _worldPtr);
@@ -26,4 +25,4 @@ public:
     trace_ray(const Ray& ray) const;
 };
 
-#endif /* defined(__SingleSphere__) */
+#endif /* __SingleSphere__ */

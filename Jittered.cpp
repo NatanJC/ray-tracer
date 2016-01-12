@@ -2,45 +2,41 @@
 //  Jittered.cpp
 //  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 12/6/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright © 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
-#include "Jittered.h"
 #include <math.h>
+#include "Jittered.h"
 #include "Maths.h"
-//---------------------------------------------------------------- default constructor
 
+//default constructor
 Jittered::Jittered(void)
-: Sampler()
+    : Sampler()
 {}
 
 
-// ---------------------------------------------------------------- constructor
-
+//constructor
 Jittered::Jittered(const int num_samples)
-: Sampler(num_samples) {
+    : Sampler(num_samples) {
     generate_samples();
 }
 
 
-// ---------------------------------------------------------------- constructor
-
+//constructor
 Jittered::Jittered(const int num_samples, const int m)
-: Sampler(num_samples, m) {
+    : Sampler(num_samples, m) {
     generate_samples();
 }
 
 
-// ---------------------------------------------------------------- copy constructor
-
+//copy constructor
 Jittered::Jittered(const Jittered& js)
-: Sampler(js) {
+    : Sampler(js) {
     generate_samples();
 }
 
-// ---------------------------------------------------------------- assignment operator
-
+//operator
 Jittered&
 Jittered::operator= (const Jittered& rhs) {
     if (this == &rhs)
@@ -51,19 +47,17 @@ Jittered::operator= (const Jittered& rhs) {
     return (*this);
 }
 
-// ---------------------------------------------------------------- clone
-
+//clone
 Jittered*
 Jittered::clone(void) const {
     return (new Jittered(*this));
 }
 
-// ---------------------------------------------------------------- destructor
-
+//destructor
 Jittered::~Jittered(void) {}
 
 
-// ---------------------------------------------------------------- generate_samples
+//generate samples function
 void
 Jittered::generate_samples(void){
     int n = (int) sqrt(num_samples);

@@ -1,13 +1,7 @@
-//
-//  Ray.h
-//  ray tracing
-//
-//  Created by Natan Chawalitcheewin on 9/28/15.
-//  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
-//
-
-//#ifndef ray_tracing_Ray_h
-//#define ray_tracing_Ray_h
+// 	Copyright (C) Kevin Suffern 2000-2007.
+//	This C++ code is for non-commercial purposes only.
+//	This C++ code is licensed under the GNU General Public License Version 2.
+//	See the file COPYING.txt for the full license.
 
 #ifndef __RAY__
 #define __RAY__

@@ -1,8 +1,8 @@
 //
 //  Tracer.h
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 11/5/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -34,4 +34,4 @@ class Tracer {
         World* world_ptr;
 };
 
-#endif /* defined(__Tracer__) */
+#endif /* __Tracer__ */

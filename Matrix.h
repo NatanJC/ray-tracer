@@ -1,11 +1,3 @@
-//
-//  matrix.h
-//  ray tracing
-//
-//  Created by Natan Chawalitcheewin on 11/9/15.
-//  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
-//
-
 #ifndef __MATRIX__
 #define __MATRIX__
 

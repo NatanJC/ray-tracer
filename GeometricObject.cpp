@@ -1,29 +1,33 @@
 //
 //  GeometricObject.cpp
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
 
 #include "GeometricObject.h"
+#include "Constants.h"
 
 //default constructor
 GeometricObject::GeometricObject(void)
+    : color(black)
 {}
 
 
-//copy constructor
+//constructor
 GeometricObject::GeometricObject (const GeometricObject& object)
+    : color(object.color)
 {}
 
 
-//assignment operator
+//operator
 GeometricObject&
 GeometricObject::operator= (const GeometricObject& rhs) {
     if (this == &rhs)
         return (*this);
+    color = rhs.color;
     
     return (*this);
 }

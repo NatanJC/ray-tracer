@@ -1,8 +1,8 @@
 //
 //  Plane.cpp
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 10/6/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -11,33 +11,37 @@
 
 const double Plane::kEpsilon = 0.001;
 
-Plane::Plane(void) {
-    
+//default constructor
+Plane::Plane(void)
+: 	GeometricObject(),
+    point(0.0),
+    normal(0, 1, 0)
+{}
+
+//constructor
+Plane::Plane(const Point3D &p, const Normal &n)
+    :	GeometricObject(),
+        point(p),
+        normal(n){
+        normal.normalize();
 }
 
-Plane::Plane(const Point3D &p, const Normal &n) {
-    
-}
-
-// ---------------------------------------------------------------- copy constructor
-
+//copy constructor
 Plane::Plane(const Plane& plane)
-:	GeometricObject(plane),
-    point(plane.point),
-    normal(plane.normal)
+    :	GeometricObject(plane),
+        point(plane.point),
+        normal(plane.normal)
 {}
 
 
-// ---------------------------------------------------------------- clone
-
+//clone
 Plane*
 Plane::clone(void) const {
     return (new Plane(*this));
 }
 
 
-// ---------------------------------------------------------------- assignment operator
-
+//assignment operator
 Plane&
 Plane::operator= (const Plane& rhs)	{
     

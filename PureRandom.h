@@ -1,12 +1,12 @@
-#ifndef __PURE_RANDOM__
-#define __PURE_RANDOM__
+//
+//  PureRandom.h
+//  wx-barebonesTracing
+//
+//  Created by Natan Chawalitcheewin.
+//  Copyright © 2015 Natan Chawalitcheewin. All rights reserved.
 
-
-// 	Copyright (C) Kevin Suffern 2000-2007.
-//	This C++ code is for non-commercial purposes only.
-//	This C++ code is licensed under the GNU General Public License Version 2.
-//	See the file COPYING.txt for the full license.
-
+#ifndef __PureRandom__
+#define __PureRandom__
 
 #include "Sampler.h"
 
@@ -34,5 +34,5 @@ class PureRandom: public Sampler {
 		generate_samples(void);
 };
 
-#endif
+#endif /* __PureRandom__ */
 

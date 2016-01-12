@@ -2,7 +2,7 @@
 //  Jittered.hpp
 //  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 12/6/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright © 2015 Natan Chawalitcheewin. All rights reserved.
 //
 

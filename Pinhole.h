@@ -1,19 +1,18 @@
-#ifndef __PINHOLE__
-#define __PINHOLE__
+//
+//  Pinhole.h
+//  wx-barebonesTracing
+//
+//  Created by Natan Chawalitcheewin.
+//  Copyright © 2015 Natan Chawalitcheewin. All rights reserved.
+//
 
-// 	Copyright (C) Kevin Suffern 2000-2007.
-//	This C++ code is for non-commercial purposes only.
-//	This C++ code is licensed under the GNU General Public License Version 2.
-//	See the file COPYING.txt for the full license.
-
-
-// This file contains the declaration of the class Pinhole
+#ifndef __Pinhole__
+#define __Pinhole__
 
 #include "Camera.h"
 #include "Point2D.h"
 #include "World.h"    // we can #include "World.h" here
 
-//--------------------------------------------------------------------- class Pinhole
 
 class Pinhole: public Camera {
 	public:
@@ -45,29 +44,26 @@ class Pinhole: public Camera {
 		
 	private:
 			
-		float	d;		// view plane distance
-		float	zoom;	// zoom factor
+		float d; 
+		float zoom;
 		
 };
 
 
 
 
-//-------------------------------------------------------------------------- set_vpd
-
+//set view distance
 inline void
 Pinhole::set_view_distance(float _d) {
 	d = _d;
 }	
-	
 
 
-//-------------------------------------------------------------------------- set_zoom
-
+//set zoom
 inline void
 Pinhole::set_zoom(float zoom_factor) {
 	zoom = zoom_factor;
 }	
 
-#endif
+#endif /* __Pinhole__ */
 

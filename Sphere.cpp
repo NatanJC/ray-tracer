@@ -1,8 +1,8 @@
 //
 //  Sphere.cpp
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 10/26/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -12,44 +12,38 @@
 
 const double Sphere::kEpsilon = 0.001;
 
-// ---------------------------------------------------------------- default constructor
-
+//default constructor
 Sphere::Sphere(void)
-: 	GeometricObject(),
-    center(0.0),
-    radius(1.0)
+    :   GeometricObject(),
+        center(0.0),
+        radius(1.0)
 {}
 
 
-// ---------------------------------------------------------------- constructor
-
+//constructor
 Sphere::Sphere(Point3D c, double r)
-: 	GeometricObject(),
-    center(c),
-    radius(r)
+    : 	GeometricObject(),
+        center(c),
+        radius(r)
 {}
 
 
-// ---------------------------------------------------------------- clone
-
+//clone
 Sphere*
 Sphere::clone(void) const {
 	return (new Sphere(*this));
 }
 
 
-// ---------------------------------------------------------------- copy constructor
-
+//copy constructor
 Sphere::Sphere (const Sphere& sphere)
-: 	GeometricObject(sphere),
-center(sphere.center),
-radius(sphere.radius)
+    : 	GeometricObject(sphere),
+        center(sphere.center),
+        radius(sphere.radius)
 {}
 
 
-
-// ---------------------------------------------------------------- assignment operator
-
+//operator
 Sphere&
 Sphere::operator= (const Sphere& rhs)
 {
@@ -66,7 +60,6 @@ Sphere::operator= (const Sphere& rhs)
 
 
 //destructor
-
 Sphere::~Sphere(void) {}
 
 

@@ -1,30 +1,27 @@
-#ifndef __CAMERA__
-#define __CAMERA__
+//
+//  Camera.h
+//  wx-barebonesTracing
+//
+//  Created by Natan Chawalitcheewin.
+//  Copyright © 2015 Natan Chawalitcheewin. All rights reserved.
+//
 
-// 	Copyright (C) Kevin Suffern 2000-2007.
-//	This C++ code is for non-commercial purposes only.
-//	This C++ code is licensed under the GNU General Public License Version 2.
-//	See the file COPYING.txt for the full license.
-
-
-// This file contains the declaration of the base class Camera
-// There is no view plane distance because the fisheye and panoramic cameras don't use it
+#ifndef __Camera__
+#define __Camera__
 
 #include "Point3D.h"
 #include "Vector3D.h"
 
-class World;  // can't #include "World" here because World contains a camera pointer
-
-//--------------------------------------------------------------------- class Camera
+class World;
 
 class Camera {
 	public:
 	
-		Camera();   							// default constructor
+		Camera();
 
-		Camera(const Camera& camera);			// copy constructor
+		Camera(const Camera& camera);
 		
-		virtual Camera*							// virtual copy constructor
+		virtual Camera*			
 		clone(void) const = 0;
 		
 		virtual
@@ -63,83 +60,66 @@ class Camera {
 		
 	protected:		
 	
-		Point3D			eye;				// eye point
-		Point3D			lookat; 			// lookat point
-		float			ra;					// roll angle
-		Vector3D		u, v, w;			// orthonormal basis vectors
-		Vector3D		up;					// up vector
-		float			exposure_time;
+		Point3D eye;
+		Point3D lookat;
+		float ra;
+		Vector3D u, v, w;
+		Vector3D up;
+		float exposure_time;
 		
-		Camera& 							// assignment operator
+		Camera&
 		operator= (const Camera& camera);
 };
 
-
-// inlined access functions
-
-
-// ----------------------------------------------------------------- set_eye
-
+//set eye
 inline void
 Camera::set_eye(const Point3D& p) {
 	eye = p;
 }
 
-
-// ----------------------------------------------------------------- set_eye
-
+//set eye
 inline void
 Camera::set_eye(const float x, const float y, const float z) {
 	eye.x = x; eye.y = y; eye.z = z;
 }
 
-
-// ----------------------------------------------------------------- set_lookat
-
+//set look at
 inline void
 Camera::set_lookat(const Point3D& p) {
 	lookat = p;
 }
 
-
-// ----------------------------------------------------------------- set_lookat
-
+//set look at
 inline void
 Camera::set_lookat(const float x, const float y, const float z) {
 	lookat.x = x; lookat.y = y; lookat.z = z;
 }
 
-
-// ----------------------------------------------------------------- set_up_vector
-
+//set up
 inline void
 Camera::set_up_vector(const Vector3D& u) {
 	up = u;
 }
 
-
-// ----------------------------------------------------------------- set_up_vector
-
+//set up
 inline void
 Camera::set_up_vector(const float x, const float y, const float z) {
 	up.x = x; up.y = y; up.z = z;
 }
 
 
-// ----------------------------------------------------------------- set_roll
-
+//set roll
 inline void
 Camera::set_roll(const float r) { 
 	ra = r;
 }
 
 
-// ----------------------------------------------------------------- set_exposure_time
-
+//set exposure time
 inline void
 Camera::set_exposure_time(const float exposure) {
 	exposure_time = exposure;
 }
 
 
-#endif
+#endif /* __Camera__ */

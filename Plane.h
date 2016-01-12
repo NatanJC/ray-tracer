@@ -1,8 +1,8 @@
 //
 //  Plane.h
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 10/6/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -19,25 +19,25 @@ class Plane: public GeometricObject {
     public:
         Plane(void);
         Plane(const Point3D &p, const Normal& n);
-        Plane(const Plane& plane); 									// copy constructor
+        Plane(const Plane& plane);
     
-        virtual Plane* 												// virtual copy constructor
+        virtual Plane*
         clone(void) const;
     
-        Plane& 														// assignment operator
+        Plane&
         operator= (const Plane& rhs);
     
-        virtual														// destructor
+        virtual
         ~Plane(void);
     
         virtual bool
         hit(const Ray& ray, double& t, ShadeRec& s) const;
     
     private:
-        Point3D point; //point through which plane passes
-        Normal normal;  //normal to the plane
+        Point3D point;
+        Normal normal;
     
-    static const  double kEpsilon; //see chapter 16
+    static const  double kEpsilon;
 };
 
-#endif /* defined(__Plane__) */
+#endif /* __Plane__ */

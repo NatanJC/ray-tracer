@@ -1,8 +1,8 @@
 //
-//  ThinLens.hpp
+//  ThinLens.h
 //  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 12/8/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright © 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -12,38 +12,39 @@
 #include <stdio.h>
 #include "Camera.h"
 #include "Sampler.h"
+#include "World.h"
 
 class ThinLens: public Camera {
-public:
-    ThinLens();
+    public:
+        ThinLens();
     
-    ThinLens(const ThinLens& tl);
+        ThinLens(const ThinLens& tl);
     
-    virtual Camera*
-    clone(void) const;
+        virtual Camera*
+        clone(void) const;
     
-    ThinLens&
-    operator= (const ThinLens& tls);
+        ThinLens&
+        operator= (const ThinLens& tls);
     
-    virtual
-    ~ThinLens();
+        virtual
+        ~ThinLens();
     
-    void
-    set_sampler(Sampler* sp);
+        void
+        set_sampler(Sampler* sp);
     
-    Vector3D
-    ray_direction(const Point2D& pixel_point, const Point2D& lens_point) const;
+        Vector3D
+        ray_direction(const Point2D& pixel_point, const Point2D& lens_point) const;
     
-    virtual void
-    render_scene(const World& w);
+        virtual void
+        render_scene(const World& w);
     
-private:
+    private:
     
-    float lens_radius; //lens radius
-    float d; //view plane distance
-    float f; //focal plane distance
-    float zoom; //zoom factor
-    Sampler* sampler_ptr; //sampler object
+        float lens_radius;
+        float d;
+        float f;
+        float zoom;
+        Sampler* sampler_ptr;
 };
 
 #endif /* __ThinLens__ */

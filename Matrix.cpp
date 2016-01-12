@@ -1,11 +1,3 @@
-//
-//  matrix.cpp
-//  ray tracing
-//
-//  Created by Natan Chawalitcheewin on 11/9/15.
-//  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
-//
-
 // 	Copyright (C) Kevin Suffern 2000-2007.
 //	This C++ code is for non-commercial purposes only.
 //	This C++ code is licensed under the GNU General Public License Version 2.

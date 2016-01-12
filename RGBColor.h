@@ -1,10 +1,8 @@
-//
-//  RGBColor.h
-//  ray tracing
-//
-//  Created by Natan Chawalitcheewin on 11/5/15.
-//  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
-//
+// 	Copyright (C) Kevin Suffern 2000-2007.
+//	This C++ code is for non-commercial purposes only.
+//	This C++ code is licensed under the GNU General Public License Version 2.
+//	See the file COPYING.txt for the full license.
+
 
 #ifndef __RGBColor__
 #define __RGBColor__

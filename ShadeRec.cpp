@@ -1,15 +1,16 @@
 //
 //  ShadeRec.cpp
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 10/6/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
 #include "ShadeRec.h"
 #include "World.h"
 
-ShadeRec::ShadeRec(World& wr) //constructor
+//constructor
+ShadeRec::ShadeRec(World& wr)
     :   hit_an_object(false),
         local_hit_point(),
         normal(),
@@ -19,5 +20,6 @@ ShadeRec::ShadeRec(World& wr) //constructor
 
 {}
 
-
-ShadeRec::~ShadeRec(void) {}
+//destructor
+ShadeRec::~ShadeRec(void)
+{}

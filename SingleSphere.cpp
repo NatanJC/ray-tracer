@@ -1,8 +1,8 @@
 //
 //  SingleSphere.cpp
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 11/5/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -13,22 +13,21 @@
 
 
 SingleSphere::SingleSphere(void)
-        : Tracer()
+        :   Tracer()
 {}
 
-
-// -------------------------------------------------------------------- constructor
+//constructor
 
 SingleSphere::SingleSphere(World* _worldPtr)
-        : Tracer(_worldPtr)
+        :   Tracer(_worldPtr)
 {}
 
 
-// -------------------------------------------------------------------- destructor
+//destructor
+SingleSphere::~SingleSphere(void)
+{}
 
-SingleSphere::~SingleSphere(void) {}
-
-
+//trace ray function
 RGBColor SingleSphere::trace_ray(const Ray& ray) const {
     ShadeRec sr(*world_ptr);
     double t;

@@ -1,8 +1,8 @@
 //
 //  Sphere.h
-//  ray tracing
+//  wx-barebonesTracing
 //
-//  Created by Natan Chawalitcheewin on 10/26/15.
+//  Created by Natan Chawalitcheewin.
 //  Copyright (c) 2015 Natan Chawalitcheewin. All rights reserved.
 //
 
@@ -17,48 +17,50 @@
 
 class Sphere: public GeometricObject {
     
-public:
+    public:
     
-    Sphere(void);   									// Default constructor
+        Sphere(void);
     
-    Sphere(Point3D center, double r);					// Constructor
+        Sphere(Point3D center, double r);
     
-    Sphere(const Sphere& sphere); 						// Copy constructor
+        Sphere(const Sphere& sphere);
     
-    virtual Sphere* 									// Virtual copy constructor
-    clone(void) const;
+        virtual Sphere*
+        clone(void) const;
     
-    virtual												// Destructor
-    ~Sphere(void);
+        virtual
+        ~Sphere(void);
     
-    Sphere& 											// assignment operator
-    operator= (const Sphere& sphere);
+        Sphere&
+        operator= (const Sphere& sphere);
     
-    void
-    set_center(const Point3D& c);
+        void
+        set_center(const Point3D& c);
     
-    void
-    set_center(const double x, const double y, const double z);
+        void
+        set_center(const double x, const double y, const double z);
     
-    void
-    set_radius(const double r);
+        void
+        set_radius(const double r);
     
-    virtual bool
-    hit(const Ray& ray, double& t, ShadeRec& s) const;
+        virtual bool
+        hit(const Ray& ray, double& t, ShadeRec& s) const;
     
-private:
+    private:
 	
-    Point3D 	center;   			// center coordinates as a point
-    double 		radius;				// the radius
+        Point3D center;
+        double radius;
     
-    static const double kEpsilon;   // for shadows and secondary rays
+        static const double kEpsilon;
 };
 
+//set center function
 inline void
 Sphere::set_center(const Point3D& c) {
 	center = c;
 }
 
+//set center function
 inline void
 Sphere::set_center(const double x, const double y, const double z) {
 	center.x = x;
@@ -66,16 +68,10 @@ Sphere::set_center(const double x, const double y, const double z) {
 	center.z = z;
 }
 
+//set radius function
 inline void
 Sphere::set_radius(const double r) {
 	radius = r;
 }
 
-
-
-
-
-
-
-
-#endif /* defined(__Sphere__) */
+#endif /* __Sphere__ */
