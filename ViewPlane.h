@@ -22,6 +22,7 @@ class ViewPlane {
         float gamma; //monitor gamma factor
         float inv_gamma; //one over gamma
         int num_samples; // number of samples per pixel
+        int max_depth; // max number of reflected bounce rays
     
         Sampler* sampler_ptr;
     
@@ -55,6 +56,9 @@ class ViewPlane {
         void
         set_sampler(Sampler* sp);
     
+        void
+        set_max_depth(int depth);
+    
     
 };
 
@@ -77,6 +81,11 @@ inline void
 ViewPlane::set_gamma(const float g) {
 	gamma = g;
 	inv_gamma = 1.0 / gamma;
+}
+
+inline void
+ViewPlane::set_max_depth(int depth) {
+    max_depth = depth;
 }
 
 

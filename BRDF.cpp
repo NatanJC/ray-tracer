@@ -7,6 +7,7 @@
 //
 
 #include "BRDF.h"
+#include "Constants.h"
 
 //default constructor
 BRDF::BRDF(void)

@@ -11,11 +11,11 @@
 
 //default constructor
 Tracer::Tracer(void)
-: world_ptr(NULL) {}
+    :   world_ptr(NULL) {}
 
 //constructor
 Tracer::Tracer(World*w_ptr)
-: world_ptr(w_ptr) {}
+    :   world_ptr(w_ptr) {}
 
 //destructor
 Tracer::~Tracer(void) {

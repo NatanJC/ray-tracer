@@ -10,20 +10,20 @@
 
 //default constructor
 Regular::Regular(void)
-    : Sampler()
+    :   Sampler()
 {}
 
 
 //constructor
 Regular::Regular(const int num)
-    : Sampler(num) {
+    :   Sampler(num) {
     generate_samples();
 }
 
 
 //copy constructor
 Regular::Regular(const Regular& u)
-    : Sampler(u) {
+    :   Sampler(u) {
     generate_samples();
 }
 

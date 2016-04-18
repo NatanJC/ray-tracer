@@ -12,15 +12,20 @@
 #include "ShadeRec.h"
 #include "World.h"
 
+//default constructor
 MultipleObjects::MultipleObjects(void)
     :   Tracer()
 {}
 
+//constructor
 MultipleObjects::MultipleObjects(World* w_ptr)
     :   Tracer(w_ptr)
 {}
 
+//destructor
 MultipleObjects::~MultipleObjects(void){}
+
+//trace ray
 RGBColor
 MultipleObjects::trace_ray(const Ray &ray) const {
     ShadeRec sr(world_ptr->hit_objects(ray));

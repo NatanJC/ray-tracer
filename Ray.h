@@ -13,6 +13,7 @@ class Ray {
     
         Point3D o;  //origin
         Vector3D d; //direction
+        int depth; //for reflection 
     
         Ray(void);  //default constructor
     

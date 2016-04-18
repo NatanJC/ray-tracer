@@ -18,21 +18,21 @@ Jittered::Jittered(void)
 
 //constructor
 Jittered::Jittered(const int num_samples)
-    : Sampler(num_samples) {
+    :   Sampler(num_samples) {
     generate_samples();
 }
 
 
 //constructor
 Jittered::Jittered(const int num_samples, const int m)
-    : Sampler(num_samples, m) {
+    :   Sampler(num_samples, m) {
     generate_samples();
 }
 
 
 //copy constructor
 Jittered::Jittered(const Jittered& js)
-    : Sampler(js) {
+    :   Sampler(js) {
     generate_samples();
 }
 

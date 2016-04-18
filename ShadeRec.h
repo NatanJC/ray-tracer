@@ -8,34 +8,34 @@
 
 #ifndef __ShadeRec__
 #define __ShadeRec__
-class World;
 
+class World;
+class Material;
+
+#include <vector>
 #include <iostream>
 #include "Point3D.h"
 #include "Normal.h"
 #include "Ray.h"
 #include "RGBColor.h"
 
-
-
 class ShadeRec {
-    public:
-        bool hit_an_object; //did the ray hit an object?
-        Point3D hit_point;			// world coordinates of intersection
-        Point3D local_hit_point; //world coordinates of hit point
-        Normal normal; //normal at hit point
-        RGBColor color;//use in chapter 3 only
-        float t;
-        World& w;
+public:
     
-
-        ShadeRec(World& wr); // constructor
-        ShadeRec(const ShadeRec& sr); //copy constructor
-        ~ShadeRec(void); //destructor
+    bool hit_an_object;
+    Material* material_ptr;
+    Point3D hit_point;
+    Point3D local_hit_point;
+    Normal normal;
+    Ray ray;
+    int depth;
+    Vector3D dir;
+    float t;
+    World& w;
+    RGBColor color;
     
-        ShadeRec& //assignment operator
-        operator= (const ShadeRec& rhs);
-    
+    ShadeRec(World& wr);
+    ShadeRec(const ShadeRec& sr);
 };
 
 #endif /* defined(__ShadeRec__) */

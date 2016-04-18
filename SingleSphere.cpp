@@ -13,13 +13,13 @@
 
 
 SingleSphere::SingleSphere(void)
-        :   Tracer()
+    :   Tracer()
 {}
 
 //constructor
 
 SingleSphere::SingleSphere(World* _worldPtr)
-        :   Tracer(_worldPtr)
+    :   Tracer(_worldPtr)
 {}
 
 

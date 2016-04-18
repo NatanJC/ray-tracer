@@ -13,17 +13,17 @@
 #include "Tracer.h"
 
 class MultipleObjects: public Tracer {
-public:
+    public:
     
-    MultipleObjects(void);
+        MultipleObjects(void);
     
-    MultipleObjects(World* _worldptr);
+        MultipleObjects(World* _worldptr);
     
-    virtual
-    ~MultipleObjects(void);
+        virtual
+        ~MultipleObjects(void);
     
-    virtual RGBColor
-    trace_ray(const Ray& ray) const;
+        virtual RGBColor
+        trace_ray(const Ray& ray) const;
 };
 
 #endif /* __MultipleObjects__ */

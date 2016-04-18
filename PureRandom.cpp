@@ -9,20 +9,20 @@
 
 //default constructor
 PureRandom::PureRandom(void)							
-	: Sampler()
+	:   Sampler()
 {}
 
 
 //constructor
 PureRandom::PureRandom(const int num)
-	: Sampler(num) {
+	:   Sampler(num) {
 	generate_samples();
 }
 
 
 //constructor
 PureRandom::PureRandom(const PureRandom& r)			
-	: Sampler(r) {
+	:   Sampler(r) {
 	generate_samples();
 }
 

@@ -9,17 +9,21 @@
 
 #include "GeometricObject.h"
 #include "Constants.h"
+#include "Material.h"
 
 //default constructor
 GeometricObject::GeometricObject(void)
-    : color(black)
+    : material_ptr(NULL)
 {}
 
 
 //constructor
-GeometricObject::GeometricObject (const GeometricObject& object)
-    : color(object.color)
-{}
+GeometricObject::GeometricObject (const GeometricObject& object) {
+    if (object.material_ptr)
+        material_ptr = object.material_ptr->clone();
+    else
+        material_ptr = NULL;
+}
 
 
 //operator
@@ -27,12 +31,31 @@ GeometricObject&
 GeometricObject::operator= (const GeometricObject& rhs) {
     if (this == &rhs)
         return (*this);
-    color = rhs.color;
     
+    if (material_ptr) {
+        delete material_ptr;
+        material_ptr = NULL;
+    }
+    
+    if (rhs.material_ptr)
+        material_ptr = rhs.material_ptr->clone();
     return (*this);
 }
 
 
 //destructor
-GeometricObject::~GeometricObject (void)
-{}
+GeometricObject::~GeometricObject (void) {
+    if (material_ptr) {
+        delete material_ptr;
+        material_ptr = NULL;
+    }
+}
+
+
+//set material function
+void
+GeometricObject::set_material(Material* mPtr) {
+    material_ptr = mPtr;
+}
+
+

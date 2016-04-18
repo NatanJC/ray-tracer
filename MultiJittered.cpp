@@ -10,27 +10,27 @@
 
 //default constructor
 MultiJittered::MultiJittered(void)
-    : Sampler()
+    :   Sampler()
 {}
 
 
 //constructor
 MultiJittered::MultiJittered(const int num_samples)
-    : Sampler(num_samples) {
+    :   Sampler(num_samples) {
     generate_samples();
 }
 
 
 //constructor
 MultiJittered::MultiJittered(const int num_samples, const int m)
-    : Sampler(num_samples, m) {
+    :   Sampler(num_samples, m) {
     generate_samples();
 }
 
 
 //copy constructor
 MultiJittered::MultiJittered(const MultiJittered& mjs)
-    : Sampler(mjs) {
+    :   Sampler(mjs) {
     generate_samples();
 }
 
